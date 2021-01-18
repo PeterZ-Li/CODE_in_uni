@@ -1,0 +1,325 @@
+#include<stdio.h>
+
+void number(int fa);
+
+int main(void)
+{
+    int a,n,b,c,d;
+    scanf("%d",&n);
+    getchar();
+    while(n--)
+    {
+        scanf("%d",&a);
+        getchar();
+        if(a<0)
+        {
+            printf("负");
+        }
+        if(a/10000)
+        {
+            d=a/10000;
+            if(d/1000)
+            {
+                b=d/1000;
+                number(b);
+                printf("仟");
+                b=d%1000;
+                if(b/100)
+                {
+                    c=b/100;
+                    number(c);
+                    printf("佰");
+                    if((b/10)%10)
+                    {
+                        c=(b/10)%10;
+                        number(c);
+                        printf("拾");
+                        if(b%10)
+                        {
+                            c=b%10;
+                            number(c);
+                        }
+                    }
+                    else
+                    {
+                        if(b%10)
+                        {
+                            c=b%10;
+                            printf("零");
+                            number(c);
+                        }
+                    }
+                }
+                else if(b/10)
+                {
+                    c=b/10;
+                    printf("零");
+                    number(c);
+                    printf("拾");
+                    if(b%10)
+                    {
+                        c=b%10;
+                        number(c);
+                    }
+                }
+                else if(b)
+                {
+                    printf("零");
+                    number(b);
+                }
+            }
+            else if(d/100)
+            {
+                b=d/100;
+                number(b);
+                printf("佰");
+                b=d%100;
+                if(b/10)
+                {
+                    c=b/10;
+                    number(c);
+                    printf("拾");
+                    if(b%10)
+                    {
+                        c=b%10;
+                        number(c);
+                    }
+                }
+                else
+                {
+                    if(b)
+                    {
+                        printf("零");
+                        number(b);
+                    }
+                }
+            }
+            else if(d/10)
+            {
+                b=d/10;
+                number(b);
+                printf("拾");
+                if(d%10)
+                {
+                    c=d%10;
+                    number(c);
+                }
+            }
+            else
+            {
+                number(d);
+            }
+            printf("万");
+            a=a%10000;
+            if(a/1000)
+            {
+                b=a/1000;
+                number(b);
+                printf("仟");
+                b=a%1000;
+                if(b/100)
+                {
+                    c=b/100;
+                    number(c);
+                    printf("佰");
+                    if((b/10)%10)
+                    {
+                        c=(b/10)%10;
+                        number(c);
+                        printf("拾");
+                        if(b%10)
+                        {
+                            c=b%10;
+                            number(c);
+                        }
+                    }
+                    else
+                    {
+                        if(b%10)
+                        {
+                            c=b%10;
+                            printf("零");
+                            number(c);
+                        }
+                    }
+                }
+                else if(b/10)
+                {
+                    c=b/10;
+                    printf("零");
+                    number(c);
+                    printf("拾");
+                    if(b%10)
+                    {
+                        c=b%10;
+                        number(c);
+                    }
+                }
+                else if(b)
+                {
+                    printf("零");
+                    number(b);
+                }
+            }
+            else if(a/100)
+            {
+                b=a/100;
+                number(b);
+                printf("佰");
+                b=a%100;
+                if(b/10)
+                {
+                    c=b/10;
+                    number(c);
+                    printf("拾");
+                    if(b%10)
+                    {
+                        c=b%10;
+                        number(c);
+                    }
+                }
+                else
+                {
+                    if(b)
+                    {
+                        printf("零");
+                        number(b);
+                    }
+                }
+            }
+            else if(a/10)
+            {
+                b=a/10;
+                number(b);
+                printf("拾");
+                if(a%10)
+                {
+                    c=a%10;
+                    number(c);
+                }
+            }
+            printf("圆\n");
+        }
+        else
+        {
+            if(a/1000)
+            {
+                b=a/1000;
+                number(b);
+                printf("仟");
+                b=a%1000;
+                if(b/100)
+                {
+                    c=b/100;
+                    number(c);
+                    printf("佰");
+                    if((b/10)%10)
+                    {
+                        c=(b/10)%10;
+                        number(c);
+                        printf("拾");
+                        if(b%10)
+                        {
+                            c=b%10;
+                            number(c);
+                        }
+                    }
+                    else
+                    {
+                        if(b%10)
+                        {
+                            c=b%10;
+                            printf("零");
+                            number(c);
+                        }
+                    }
+                }
+                else if(b/10)
+                {
+                    c=b/10;
+                    printf("零");
+                    number(c);
+                    printf("拾");
+                    if(b%10)
+                    {
+                        c=b%10;
+                        number(c);
+                    }
+                }
+                else if(b)
+                {
+                    printf("零");
+                    number(b);
+                }
+            }
+            else if(a/100)
+            {
+                b=a/100;
+                number(b);
+                printf("佰");
+                b=a%100;
+                if(b/10)
+                {
+                    c=b/10;
+                    number(c);
+                    printf("拾");
+                    if(b%10)
+                    {
+                        c=b%10;
+                        number(c);
+                    }
+                }
+                else
+                {
+                    if(b)
+                    {
+                        printf("零");
+                        number(b);
+                    }
+                }
+            }
+            else if(a/10)
+            {
+                b=a/10;
+                number(b);
+                printf("拾");
+                if(a%10)
+                {
+                    c=a%10;
+                    number(c);
+                }
+            }
+            printf("圆\n");
+        }
+        
+    }
+    return 0;
+}
+
+void number(int fa)
+{
+    switch (fa)
+    {
+        case 1: printf("壹");
+                break;
+        case 2: printf("贰");
+                break;
+        case 3: printf("叁");
+                break;
+        case 4: printf("肆");
+                break;
+        case 5: printf("伍");
+                break;
+        case 6: printf("陆");
+                break;
+        case 7: printf("柒");
+                break;
+        case 8: printf("捌");
+                break;
+        case 9: printf("玖");
+                break;
+        default:
+            break;
+    }
+    return;
+}
