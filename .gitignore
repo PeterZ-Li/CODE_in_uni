@@ -37,4 +37,6 @@
 /Prime.c~
 *.json
 *.bin
+README.md
+.github
 >>>>>>> upstream/master
