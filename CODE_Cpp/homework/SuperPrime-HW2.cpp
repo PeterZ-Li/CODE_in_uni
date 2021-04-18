@@ -12,12 +12,24 @@ public:
   }
   ~Nature() {
   }
+  bool isSuperPrime() const{
+    
+  }
+  bool compare(Nature p){
+    
+  }
+  void show(){
+
+  }
 };
 class SuperPrime {
 private:
+  int LowLimit,HighLimit;
   std::vector<Nature> natures;
 public:
-  SuperPrime(int a, int b) {
+  SuperPrime(int a, int b){
+    a=LowLimit;
+    b=HighLimit;
     for(int i = a; i < b; i++) {
       Nature nat(i);
       natures.push_back(nat);
@@ -27,7 +39,7 @@ public:
   }
   
   Nature max() {
-  	std::vector<Nature>::iterate it = natures.begin();
+  	std::vector<Nature>::iterator it = natures.begin();
   	Nature max(0);
   	for(; it != natures.end(); it ++) {
   	  if(it->isSuperPrime()) {
@@ -40,7 +52,7 @@ public:
   }
 };
 int main() {
-  SuperPrime sp(100，999);
+  SuperPrime sp(100,999);
   Nature n = sp.max(); 
   n.show();  
   return 0;
