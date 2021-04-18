@@ -2,10 +2,8 @@
 
 class Step
 {
-    private:
-    int num;
     public:
-    Step(int n):num(n)
+    Step()
     {
     }
     ~Step()
@@ -46,7 +44,7 @@ int main()
 {
     int n;
     std::cin>>n;
-    Step st(n);
+    Step st;
     st.discount(n);
     return 0;
 }
