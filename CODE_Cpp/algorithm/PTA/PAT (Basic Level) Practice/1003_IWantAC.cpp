@@ -41,7 +41,7 @@ class RightAnswer
                 {
                     fir=i;
                 }
-                else if(s[i]=='T'&&fir!=-1)
+                else if(s[i]=='T'&&fir!=-1)//PAT的顺序控制
                 {
                     sec=i-1-fir;
                     if(s[i+1]=='\0')
