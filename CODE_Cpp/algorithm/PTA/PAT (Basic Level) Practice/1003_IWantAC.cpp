@@ -10,7 +10,7 @@ class Character
     Character(string s):str(s)
     {
     }
-    bool isPTA()
+    bool isPAT()
     {
         for(int i=0;i<(int)str.size();i++)//别忘了size的强制类型转换
         {
@@ -26,14 +26,14 @@ class Character
 class RightAnswer
 {
     private:
-    int fir,sec,tri;
+    int fir=-1,sec,tri;
     public:
     RightAnswer()
     {
         string s;
         cin >> s;
         Character cha(s);
-        if(cha.isPTA())
+        if(cha.isPAT())
         {
             for(int i=0;i<(int)s.size();i++)
             {
@@ -41,7 +41,7 @@ class RightAnswer
                 {
                     fir=i;
                 }
-                else if(s[i]=='T')
+                else if(s[i]=='T'&&fir!=-1)
                 {
                     sec=i-1-fir;
                     if(s[i+1]=='\0')
