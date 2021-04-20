@@ -12,7 +12,7 @@ class Character
     }
     bool isPTA()
     {
-        for(int i=0;i<str.size();i++)
+        for(int i=0;i<(int)str.size();i++)//别忘了size的强制类型转换
         {
             if(str[i]!='P'||str[i]!='T'||str[i]!='A')
             {
@@ -35,7 +35,7 @@ class RightAnswer
         Character cha(s);
         if(cha.isPTA())
         {
-            for(int i=0;i<s.size();i++)
+            for(int i=0;i<(int)s.size();i++)
             {
                 if(s[i]=='P')
                 {
