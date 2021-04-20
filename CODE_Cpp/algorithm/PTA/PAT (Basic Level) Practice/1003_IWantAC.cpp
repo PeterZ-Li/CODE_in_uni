@@ -14,7 +14,7 @@ class Character
     {
         for(int i=0;i<(int)str.size();i++)//别忘了size的强制类型转换
         {
-            if(str[i]!='P'||str[i]!='T'||str[i]!='A')
+            if(str[i]!='P'&&str[i]!='T'&&str[i]!='A')
             {
                 cout<<"NO"<<endl;
                 return false;
@@ -44,12 +44,18 @@ class RightAnswer
                 else if(s[i]=='T')
                 {
                     sec=i-1-fir;
-                    tri=s.size()-i;
-                    break;
+                    if(s[i+1]=='\0')
+                    {
+                        tri=i-1-sec-fir;
+                    }
+                }
+                else if(s[i+1]=='\0')
+                {
+                    tri=i-1-sec-fir;
                 }
             }
+            relation();
         }
-        relation();
     }
     void relation()
     {
@@ -88,7 +94,7 @@ int main()
     cin>>n;
     while (n--)
     {
-        RightAnswer AC();
+        RightAnswer AC;
     }
     return 0;
 }
