@@ -9,35 +9,76 @@ class Character
     public:
     Character(string s):str(s)
     {
-
     }
-    void isPTA()
+    bool isPTA()
     {
-
+        for(int i=0;i<str.size();i++)
+        {
+            if(str[i]!='P'||str[i]!='T'||str[i]!='A')
+            {
+                cout<<"NO"<<endl;
+                return false;
+            }
+        }
+        return true;
     }
 };
 class RightAnswer
 {
     private:
-    int fri,sec,tri;
+    int fir,sec,tri;
     public:
     RightAnswer()
     {
         string s;
         cin >> s;
         Character cha(s);
+        if(cha.isPTA())
+        {
+            for(int i=0;i<s.size();i++)
+            {
+                if(s[i]=='P')
+                {
+                    fir=i;
+                }
+                else if(s[i]=='T')
+                {
+                    sec=i-1-fir;
+                    tri=s.size()-i;
+                    break;
+                }
+            }
+        }
+        relation();
     }
-    bool second(int b)
+    void relation()
     {
-
-    }
-    bool compare(int a,int c)
-    {
-
-    }
-    bool calculate(int a,int b,int c)
-    {
-
+        if(sec==0)
+        {
+            cout<<"NO"<<endl;
+        }
+        else if(sec==1)
+        {
+            if(fir==tri)
+            {
+                cout<<"YES"<<endl;
+            }
+            else
+            {
+            cout<<"NO"<<endl;
+            }
+        }
+        else if(sec>1)
+        {
+            if(tri==(fir*sec))
+            {
+                cout<<"YES"<<endl;                
+            }
+            else
+            {
+                cout<<"NO"<<endl;                
+            }
+        }
     }
 };
 
@@ -49,4 +90,5 @@ int main()
     {
         RightAnswer AC();
     }
+    return 0;
 }
