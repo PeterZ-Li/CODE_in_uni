@@ -12,8 +12,8 @@ class Table
     int num;
     struct GradeTable
     {
-        char name;
-        char StuID;
+        char name[N];//人名要数组
+        char StuID[N];
         int grade;
     };
     public:
