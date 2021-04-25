@@ -1,5 +1,5 @@
 #include<iostream>
-
+#include<new>//add new
 class Guess//完成（3n+1）猜想
 {
     private:
@@ -48,7 +48,7 @@ class KeyNum//输入数字，得到一串数字猜想的关键数字
     {
         for(int i=0;i<n;i++)
         {
-            std::cin>>*(num++);
+            std::cin>>num[i];//change the way to express array
             getchar();
         }
     }
