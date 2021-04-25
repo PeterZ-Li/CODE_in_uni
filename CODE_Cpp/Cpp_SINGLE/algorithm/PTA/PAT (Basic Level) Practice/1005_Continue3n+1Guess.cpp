@@ -90,6 +90,7 @@ class KeyNum//输入数字，得到一串数字猜想的关键数字
                 std::cout<<num[i];
             }
         }
+        delete[] num;//need to delete 
     }
     /*void StoreNum()
     {
