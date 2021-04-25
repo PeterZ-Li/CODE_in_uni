@@ -11,27 +11,85 @@ class Guess//完成（3n+1）猜想
     }
     bool parity()
     {
-
+        if(num%2==0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
-    int dicount()//return the guessnum to compare
+    int discount()//return the guessnum to compare
     {
-
+        //while(num!=1)
+        //{
+            if(parity())
+            {
+                num=num/2;
+                return num;
+            }
+            else
+            {
+                num=(3*num+1)/2;
+                return num;
+            }
+        //}
     }
 };
 
 class KeyNum//输入数字，得到一串数字猜想的关键数字
 {
     private:
-    int n;
+    int n,guessnum=0;
     int *num=new int[n];
     public:
     KeyNum(int b):n(b)//store num into *num circularly
     {
-
+        for(int i=0;i<n;i++)
+        {
+            std::cin>>*(num++);
+            getchar();
+        }
     }
     void TellNum()//need to creat Guess object
     {
-        
+        for(int i=0;i<n;i++)
+        {
+            if(num[i]!=0)
+            {
+                Guess gu(num[i]);
+                while(guessnum!=1)
+                {
+                    guessnum=gu.discount();
+                    CompareNum();
+                }
+            }
+            guessnum=0;
+        }
+        for(int i=0;num[i]!='\0';i++)
+        {
+            for(int j=i+1;num[i]!='\0';j++)
+            {
+                if(num[i]<num[j])
+                {
+                    int t=num[i];
+                    num[i]=num[j];
+                    num[j]=t;
+                }
+            }
+        }
+        for(int i=0;num[i]!='\0';i++)
+        {
+            if(num[i+1]!='\0')
+            {
+                std::cout<<num[i]<<" ";
+            }
+            else
+            {
+                std::cout<<num[i];
+            }
+        }
     }
     /*void StoreNum()
     {
@@ -39,7 +97,13 @@ class KeyNum//输入数字，得到一串数字猜想的关键数字
     }*/
     void CompareNum()//need to use discount
     {
-
+        for(int i=0;i<n;i++)
+        {
+            if(guessnum==num[i])
+            {
+                num[i]='\0';
+            }
+        }
     }
 };
 
