@@ -49,7 +49,7 @@ class KeyNum//输入数字，得到一串数字猜想的关键数字
         for(int i=0;i<n;i++)
         {
             std::cin>>num[i];//change the way to express array
-            getchar();
+            //getchar();
         }
     }
     void TellNum()//need to creat Guess object
@@ -69,7 +69,7 @@ class KeyNum//输入数字，得到一串数字猜想的关键数字
         }
         for(int i=0;num[i]!='\0';i++)
         {
-            for(int j=i+1;num[i]!='\0';j++)
+            for(int j=i+1;num[i]!=0;j++)//'\0' express it does not exist, so don't worry 0 will conflict with '\0'
             {
                 if(num[i]<num[j])
                 {
@@ -79,7 +79,7 @@ class KeyNum//输入数字，得到一串数字猜想的关键数字
                 }
             }
         }
-        for(int i=0;num[i]!='\0';i++)
+        for(int i=0;num[i]!='\0';i++)//output keynum
         {
             if(num[i+1]!='\0')
             {
@@ -90,7 +90,7 @@ class KeyNum//输入数字，得到一串数字猜想的关键数字
                 std::cout<<num[i];
             }
         }
-        delete[] num;//need to delete 
+        //delete[] num;//need to delete 
     }
     /*void StoreNum()
     {
@@ -102,7 +102,7 @@ class KeyNum//输入数字，得到一串数字猜想的关键数字
         {
             if(guessnum==num[i])
             {
-                num[i]='\0';
+                num[i]=0;//if =='\0', it will conflit with output
             }
         }
     }
