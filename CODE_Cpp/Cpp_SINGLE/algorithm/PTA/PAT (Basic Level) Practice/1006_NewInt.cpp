@@ -8,7 +8,25 @@ class NewInt
     NewInt(int n):num(n)
     {
     }
-    void show();
+    void show()
+    {
+        int g,s,b;
+        g=num%10;
+        s=num/10%10;
+        b=num/100;
+        for(int i=0;i<b;i++)
+        {
+            std::cout<<"B";
+        }
+        for(int i=0;i<s;i++)
+        {
+            std::cout<<"S";
+        }
+        for(int i=0;i<g;i++)
+        {
+            std::cout<<i+1;
+        }                
+    }
 };
 int main()
 {
