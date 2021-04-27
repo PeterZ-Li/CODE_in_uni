@@ -67,10 +67,10 @@ class KeyNum//输入数字，得到一串数字猜想的关键数字
             }
             guessnum=0;
         }
-        for(int i=0;num[i]!='\0';i++)
+        for(int i=0;i<n;i++)//\0 will appear in the other place in this array
         {
-            for(int j=i+1;num[i]!=0;j++)//'\0' express it does not exist, so don't worry 0 will conflict with '\0'
-            {
+            for(int j=i+1;j<n;j++)//'\0' express it does not exist, so don't worry 0 will conflict with '\0'.'\0'=(ascii)0,so it will be 0
+            {                     //if it is int.\0 will exist in anywhere,so use j<n.
                 if(num[i]<num[j])
                 {
                     int t=num[i];
@@ -79,9 +79,9 @@ class KeyNum//输入数字，得到一串数字猜想的关键数字
                 }
             }
         }
-        for(int i=0;num[i]!='\0';i++)//output keynum
+        for(int i=0;i<n;i++)//output keynum
         {
-            if(num[i+1]!='\0')
+            if(num[i+1]!=0)
             {
                 std::cout<<num[i]<<" ";
             }
@@ -102,7 +102,7 @@ class KeyNum//输入数字，得到一串数字猜想的关键数字
         {
             if(guessnum==num[i])
             {
-                num[i]=0;//if =='\0', it will conflit with output
+                num[i]=0;//if =='\0', it will conflit with output.But after reknowing the logic, maybe it should be set \0
             }
         }
     }
