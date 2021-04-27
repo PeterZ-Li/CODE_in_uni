@@ -79,7 +79,7 @@ class KeyNum//输入数字，得到一串数字猜想的关键数字
                 }
             }
         }
-        for(int i=0;i<n;i++)//output keynum
+        for(int i=0;num[i]!=0;i++)//output keynum
         {
             if(num[i+1]!=0)
             {
