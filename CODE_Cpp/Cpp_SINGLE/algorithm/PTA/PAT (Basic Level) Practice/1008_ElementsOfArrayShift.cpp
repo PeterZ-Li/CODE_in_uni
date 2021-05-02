@@ -15,6 +15,10 @@ class Container
         {
             array.push_back(a[i]);
         }
+        if(movement>(int)array.size())//forget this condition
+        {
+            movement=movement-(int)array.size();
+        }
     }
     void show()//cout the right order of the array after shifting
     {
