@@ -12,9 +12,9 @@ class Nature//mind the order of the class, especially you need to use the class 
     }
     bool isPrime()//judge the nature
     {
-    if(num == 1 || num == 0)
-    return false;
-    for(int i = 2; i <= num; i++)
+    //if(num == 1 || num == 0) don't need this selection statement, for I have control the num in row36
+    //return false;
+    for(int i = 2; i < num; i++)//if i<=num, it must be false
     {
         if(num % i == 0)
         return false;
@@ -33,7 +33,7 @@ class Guess
     void tell()
     {
         std::vector<Nature> Pr;// get the scale of nature, get the prime vector
-        for(int i=2;i<N;i++)
+        for(int i=2;i<=N;i++)//if N itself is prime, and it can satisfy this guess
         {
             Nature nat(i);
             if(nat.isPrime())
