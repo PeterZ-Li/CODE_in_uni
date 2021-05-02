@@ -18,19 +18,36 @@ class Container
     }
     void show()//cout the right order of the array after shifting
     {
-        for(int i=(int)array.size()-movement;i!=(int)array.size();i++)
+        if(movement==0||movement==(int)array.size())//need to consider the special conditions
         {
-            std::cout<<array[i]<<" ";
+            for(int i=0;i<(int)array.size();i++)
+            {
+                if(i<(int)array.size()-1)
+                {
+                    std::cout<<array[i]<<" ";
+                }
+                else
+                {
+                    std::cout<<array[i];
+                }
+            }
         }
-        for(int i=0;i<(int)array.size()-movement;i++)
+        else
         {
-            if(i<(int)array.size()-movement-1)
+            for(int i=(int)array.size()-movement;i!=(int)array.size();i++)
             {
                 std::cout<<array[i]<<" ";
             }
-            else
+            for(int i=0;i<(int)array.size()-movement;i++)
             {
-                std::cout<<array[i];
+                if(i<(int)array.size()-movement-1)
+                {
+                    std::cout<<array[i]<<" ";
+                }
+                else
+                {
+                    std::cout<<array[i];
+                }
             }
         }
     }
