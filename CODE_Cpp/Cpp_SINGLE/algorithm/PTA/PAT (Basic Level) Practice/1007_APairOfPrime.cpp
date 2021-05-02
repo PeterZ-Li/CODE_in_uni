@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<math.h>
 
 class Nature//mind the order of the class, especially you need to use the class in other class
 {
@@ -14,7 +15,7 @@ class Nature//mind the order of the class, especially you need to use the class 
     {
     //if(num == 1 || num == 0) don't need this selection statement, for I have control the num in row36
     //return false;
-    for(int i = 2; i < num; i++)//if i<=num, it must be false
+    for(int i = 2; i < sqrt(num)+1; i++)//if i<=num, it must be false. use sqrt can reduce time, but remember to add 1 while it may be wrong
     {
         if(num % i == 0)
         return false;
