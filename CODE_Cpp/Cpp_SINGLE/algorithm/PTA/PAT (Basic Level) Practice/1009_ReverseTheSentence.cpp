@@ -6,15 +6,37 @@ class Reverse
 {
     private:
     std::string sentence;
-    int position[N];
+    int position[N]={1};//base of position
     public:
     Reverse(std::string s):sentence(s)//record the position of each words
     {
-        
+        std::string::iterator it=sentence.begin();
+        for(;it!=sentence.end();it++)
+        {
+            if(*it==' ')
+            {
+                position[std::distance(sentence.begin(),it+1)]=1;
+            }
+        }
     }
     void show()//output the opposite of the sentence with the help of position
     {
-
+        for(int i=sentence.size();i>=0;i--)
+        {
+            if(position[i]==1)
+            {
+                int j=i;
+                do
+                {
+                    std::cout<<sentence[j];
+                    j++;
+                }while(sentence[j]!='\0'||sentence[j]!=' ');
+                if(i!=0)
+                {
+                    std::cout<<' ';
+                }
+            }
+        }
     }
 };
 int main()
