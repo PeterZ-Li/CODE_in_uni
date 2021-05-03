@@ -30,7 +30,7 @@ class Reverse
                 {
                     std::cout<<sentence[j];
                     j++;
-                }while(sentence[j]!='\0'||sentence[j]!=' ');
+                }while(position[j+1]!=1);//use position as the condition
                 if(i!=0)
                 {
                     std::cout<<' ';
