@@ -15,7 +15,12 @@ class Reverse
         {
             if(*it==' ')
             {
+                position[std::distance(sentence.begin(),it)]=-1;//meet ' ' set -1
                 position[std::distance(sentence.begin(),it+1)]=1;
+            }
+            if(it==sentence.end()-1)
+            {
+                position[std::distance(sentence.begin(),it+1)]=-1;//set -1 in the end
             }
         }
     }
@@ -30,7 +35,7 @@ class Reverse
                 {
                     std::cout<<sentence[j];
                     j++;
-                }while(position[j+1]!=1);//use position as the condition
+                }while(position[j]!=-1);//use position as the condition
                 if(i!=0)
                 {
                     std::cout<<' ';
