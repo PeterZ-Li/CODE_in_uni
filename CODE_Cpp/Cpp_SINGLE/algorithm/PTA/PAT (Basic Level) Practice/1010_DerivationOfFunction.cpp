@@ -35,13 +35,14 @@ class Derivation
     {
         for(int i=0;i<(int)coefficient.size();i+=2)
         {
-            if(i!=(int)coefficient.size()-2)
+            if(coefficient[i+3]!=0)
             {
-                std::cout<<coefficient[i]*coefficient[i+1]<<' ';
+                std::cout<<coefficient[i]*coefficient[i+1]<<' '<<coefficient[i+1]-1<<' ';
             }
             else
             {
-                std::cout<<coefficient[i]*coefficient[i+1];
+                std::cout<<coefficient[i]*coefficient[i+1]<<' '<<coefficient[i+1]-1;
+                break;
             }
         }
     }
