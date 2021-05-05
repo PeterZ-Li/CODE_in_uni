@@ -16,8 +16,18 @@ class Derivation
             int i;
             if(polynomial[it]!=' ')
             {
-                i=polynomial[it]-'0';
-                coefficient.push_back(i);
+                if(polynomial[it]=='-')//deal with negtive number
+                {
+                    it++;
+                    i=polynomial[it]-'0';
+                    i=-i;
+                    coefficient.push_back(i);
+                }
+                else
+                {
+                    i=polynomial[it]-'0';
+                    coefficient.push_back(i);
+                }
             }
         }
     }
