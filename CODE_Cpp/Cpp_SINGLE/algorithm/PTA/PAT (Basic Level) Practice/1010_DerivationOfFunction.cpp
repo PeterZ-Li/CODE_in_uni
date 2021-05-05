@@ -33,16 +33,23 @@ class Derivation
     }
     void derivate()//multiply the variables in vector and output with blank space
     {
-        for(int i=0;i<(int)coefficient.size();i+=2)
+        if(coefficient[0]*coefficient[1]==0)
         {
-            if(coefficient[i+3]!=0)
+            std::cout<<"0 0";
+        }
+        else
+        {
+            std::cout<<coefficient[0]*coefficient[1]<<' '<<coefficient[1]-1;
+            for(int i=2;i<(int)coefficient.size();i+=2)
             {
-                std::cout<<coefficient[i]*coefficient[i+1]<<' '<<coefficient[i+1]-1<<' ';
-            }
-            else
-            {
-                std::cout<<coefficient[i]*coefficient[i+1]<<' '<<coefficient[i+1]-1;
-                break;
+                if(coefficient[i]*coefficient[i+1]!=0)
+                {
+                    std::cout<<" "<<coefficient[i]*coefficient[i+1]<<" "<<coefficient[i+1]-1;
+                }
+                else
+                {
+                    continue;
+                }
             }
         }
     }
