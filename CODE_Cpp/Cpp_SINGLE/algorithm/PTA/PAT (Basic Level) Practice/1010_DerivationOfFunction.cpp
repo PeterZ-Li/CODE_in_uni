@@ -1,17 +1,17 @@
 #include<iostream>
-#include<string>
+//#include<string>
 //#include<sstream> for a single element in the string, we can not let it as a stream
 #include<vector>
 
 class Derivation
 {
     private:
-    std::string polynomial;
+    //std::string polynomial;
     std::vector<int> coefficient;
     public:
-    Derivation(std::string pol):polynomial(pol)//get the coefficient
+    Derivation(std::vector<int> pol):coefficient(pol)//get the coefficient
     {
-        for(int it=0;it<(int)polynomial.size();it++)
+        /*for(int it=0;it<(int)polynomial.size();it++)
         {
             int i;
             if(polynomial[it]!=' ')
@@ -29,7 +29,7 @@ class Derivation
                     coefficient.push_back(i);
                 }
             }
-        }
+        }*/
     }
     void derivate()//multiply the variables in vector and output with blank space
     {
@@ -56,8 +56,14 @@ class Derivation
 };
 int main()
 {
-    std::string pol;
-    getline(std::cin,pol);
+    //std::string pol;     string can not change the large number to int easily, such as change '1000' to (int)1000
+    //getline(std::cin,pol);
+    std::vector<int> pol;
+    int i;
+    while(std::cin>>i)//so I use this code to achieve my aim
+    {
+        pol.push_back(i);
+    }
     Derivation der(pol);
     der.derivate();
     return 0;
