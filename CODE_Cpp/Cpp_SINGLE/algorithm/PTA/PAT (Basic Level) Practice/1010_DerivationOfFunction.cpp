@@ -48,7 +48,7 @@ class Derivation
                 }
                 else
                 {
-                    continue;
+                    break;
                 }
             }
         }
