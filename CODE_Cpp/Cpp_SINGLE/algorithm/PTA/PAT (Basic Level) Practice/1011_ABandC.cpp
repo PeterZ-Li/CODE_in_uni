@@ -10,7 +10,14 @@ class Inequality
     }
     void greater()//judge A+B>C?
     {
-
+        if(A+B>C)
+        {
+            std::cout<<"true"<<std::endl;
+        }
+        else
+        {
+            std::cout<<"false"<<std::endl;
+        }
     }
 };
 int main()
@@ -21,7 +28,7 @@ int main()
     {
         std::cin>>A>>B>>C;
         Inequality ine(A,B,C);
-        std::cout<<"case #"<<i<<": ";
+        std::cout<<"Case #"<<i<<": ";
         ine.greater();
     }
     return 0;
