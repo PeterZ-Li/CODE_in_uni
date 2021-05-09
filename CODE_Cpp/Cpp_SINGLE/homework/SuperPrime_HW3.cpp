@@ -14,6 +14,7 @@ public:
   	return true;
   }
   void show() {
+	
   	std::cout << num << std::endl;
   }
 };
@@ -41,15 +42,19 @@ int main() {
   std::vector<Nature*> sps; 
   for (int i = 100; i < 999; i++) {
   	Nature *nat = new SuperPrime(i);
-  	if ((*nat).isPrime())
+  	if (nat->isPrime())//why it also can output correct superprime?
   	  sps.push_back(nat);
   }
+  std::cout<<"The Total Of Super Prime:"<<sps.size()<<std::endl;
+  int sum=0;
   std::vector<Nature*>::iterator it;
   for(it=sps.begin(); it!=sps.end();it++) {
-  	(*it)->show();
+  	sum+=*(*it);
   }
-  for(it=sps.begin(); it!=sps.end();it++) {
+  std::cout<<"The Sum Of Super Prime:"<<sum<<std::endl;
+  std::cout<<"The Max Of Super Prime:"<<sps[sps.size()-1]<<std::endl;
+  /*for(it=sps.begin(); it!=sps.end();it++) {
   	delete *it;
-  }
+  }*/
   return 0;
 } 
