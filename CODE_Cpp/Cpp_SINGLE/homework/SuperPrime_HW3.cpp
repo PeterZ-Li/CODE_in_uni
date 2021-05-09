@@ -33,7 +33,7 @@ public:
   	  mul *= x;
   	  sqr += x*x;
 	}
-	Nature nat(sum), nat1(mul), nat2(sqr);
+	  Nature nat(sum), nat1(mul), nat2(sqr);
   	return Nature::isPrime() && nat.isPrime() && nat1.isPrime()&& nat2.isPrime();
   }
 };
@@ -45,16 +45,13 @@ int main() {
   	if (nat->isPrime())//why it also can output correct superprime?
   	  sps.push_back(nat);
   }
-  std::cout<<"The Total Of Super Prime:"<<sps.size()<<std::endl;
   int sum=0;
   std::vector<Nature*>::iterator it;
   for(it=sps.begin(); it!=sps.end();it++) {
-  	sum+=*(*it);
+  	(*it)->show();
   }
-  std::cout<<"The Sum Of Super Prime:"<<sum<<std::endl;
-  std::cout<<"The Max Of Super Prime:"<<sps[sps.size()-1]<<std::endl;
-  /*for(it=sps.begin(); it!=sps.end();it++) {
+  for(it=sps.begin(); it!=sps.end();it++) {
   	delete *it;
-  }*/
+  }
   return 0;
 } 
