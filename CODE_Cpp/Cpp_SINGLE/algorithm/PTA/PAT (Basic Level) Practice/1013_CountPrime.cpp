@@ -1,4 +1,5 @@
 #include<iostream>
+#include<math.h>
 
 class Nature
 {
@@ -32,8 +33,8 @@ class Nature
     bool isprime()//judge if it is prime
     {
         num++;
-        for(int i=2;i<num;i++)
-        {
+        for(int i=2;i<sqrt(num)+1;i++)//need to add sqrt(num)+1, especially "+1", it can ensure the accuracy.
+        {                            //(.i.e sqrt(3)=1.7, if +1,can be correct)
             if(num%i==0)
             {
                 return false;
