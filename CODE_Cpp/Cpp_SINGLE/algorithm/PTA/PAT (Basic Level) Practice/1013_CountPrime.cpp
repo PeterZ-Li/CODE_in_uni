@@ -9,9 +9,9 @@ class Nature
     {}
     void countprime()//count and control the whole progress
     {
-        if(low==high&&low==1)
+        if(low==1)
         {
-            std::cout<<2;
+            show();//solve the problem by '1'
         }
         while(count<=high)
         {
