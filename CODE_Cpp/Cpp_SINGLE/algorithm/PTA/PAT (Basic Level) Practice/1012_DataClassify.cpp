@@ -1,9 +1,10 @@
 #include<iostream>
+#include <iomanip>//correct float number's precision
 
 class Classification
 {
     private:
-    int N,n,total,count=1;//classify n one by one
+    int N,n,total=0,count=1;//classify n one by one
     struct sort//use a struct to define A
     {
         int A1=0,A2=0,A3=0,A5=0;
@@ -51,13 +52,13 @@ class Classification
                 A.A3++;
             }
             break;
-        case 4:
+        case 3:// the statement is wrong
             {
                 total++;
                 A.A4+=n;
             }
             break;
-        case 5:
+        case 4:// the statement is wrong
             {
                 if(n>A.A5)
                 {
@@ -98,7 +99,7 @@ class Classification
         }
         if(A.A4)
         {
-            std::cout<<"%.1d"<<A.A4/total;
+            std::cout<<std::fixed<<std::setprecision(1)<<A.A4/total<<" ";//correct the precision of number in 0.1
         }
         else
         {
