@@ -3,7 +3,7 @@
 class Classification
 {
     private:
-    int N,n,total;//classify n one by one
+    int N,n,total,count=1;//classify n one by one
     struct sort//use a struct to define A
     {
         int A1=0,A2=0,A3=0,A5=0;
@@ -20,7 +20,7 @@ class Classification
     }
     void classify()//classify a number from keyboard
     {
-        int temp,count=1;
+        int temp;
         temp=n%5;
         switch (temp)
         {
