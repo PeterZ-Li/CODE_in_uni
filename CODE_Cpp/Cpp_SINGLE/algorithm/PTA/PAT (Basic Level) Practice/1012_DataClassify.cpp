@@ -4,7 +4,7 @@
 class Classification
 {
     private:
-    int N,n,total=0,count=1;//classify n one by one
+    int N,n,total=0,count=1,correct=0;//classify n one by one
     struct sort//use a struct to define A
     {
         int A1=0,A2=0,A3=0,A5=0;
@@ -33,8 +33,9 @@ class Classification
                 }
             }
             break;
-        case 1:
+        case 1://A2 maybe the 0, but there is operation
             {
+                correct=1;
                 if(count)
                 {
                     A.A2+=n;
@@ -81,7 +82,7 @@ class Classification
         {
             std::cout<<"N"<<" ";
         }
-        if(A.A2)
+        if(correct)
         {
             std::cout<<A.A2<<" ";
         }
