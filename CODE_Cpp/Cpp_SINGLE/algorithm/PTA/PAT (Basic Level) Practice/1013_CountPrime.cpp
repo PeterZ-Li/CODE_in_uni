@@ -16,15 +16,19 @@ class Nature
         }
         while(count<=high)
         {
-            while(count>=low-1&&count<high)
+            if(count>=low-1)
             {
-                if(isprime())
+                while(count>=low-1&&count<high-1)
                 {
-                    count++;//count connect with prime, but change later than prime
-                    show();
+                    if(isprime())
+                    {
+                        count++;//count connect with prime, but change later than prime
+                        show();
+                    }
                 }
+                return;
             }
-            if(isprime())
+            else if(isprime())//after the loop, can end directly, don't need to judge the prime again
             {
                 count++;
             }
