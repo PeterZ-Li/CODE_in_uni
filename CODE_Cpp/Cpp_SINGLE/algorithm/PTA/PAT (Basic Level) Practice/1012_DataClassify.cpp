@@ -6,13 +6,13 @@ class Classification
     int N,n,total;//classify n one by one
     struct sort//use a struct to define A
     {
-        int A1,A2,A3,A5;
-        float A4;
+        int A1=0,A2=0,A3=0,A5=0;
+        float A4=0;
     }A;
     public:
     Classification(int N):N(N)//need to classify n one by one, use classify()
     {
-        while(N--)
+        while(Classification::N--)
         {
             std::cin>>n;
             classify();
@@ -26,7 +26,7 @@ class Classification
         {
         case 0:
             {
-                if(n/2==0)
+                if(n%2==0)//find the even number
                 {
                     A.A1+=n;
                 }
@@ -120,7 +120,7 @@ int main()
     int N;
     std::cin>>N;
     Classification cla(N);
-    cla.classify();
+    //cla.classify();repeat classify
     cla.show();
     return 0;
 }
