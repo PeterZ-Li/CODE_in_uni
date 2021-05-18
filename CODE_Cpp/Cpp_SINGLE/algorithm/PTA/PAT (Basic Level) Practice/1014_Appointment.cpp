@@ -1,5 +1,7 @@
 #include<iostream>
 #include<string>
+#include<vector>
+#include<iomanip>//control the width
 
 #define N 4
 /*struct Time
@@ -11,59 +13,49 @@
 
 int main()
 {
-    const char DAY[][N]={"MON","TUE","WED","THU","FRI","SAT","SUN"};
-    std::string code[N];
+    std::vector<std::string> DAY={"MON","TUE","WED","THU","FRI","SAT","SUN"};
+    std::string a,b,c,d;
     int i,counter=0;
-    for(int j=0;j<N;j++)
-    {
-        std::getline(std::cin,code[j]);
-    }
-    for(i=0;code[1][i]!='\0'||code[0][i]!='\0';i++)
+    std::cin>>a>>b>>c>>d;//a string without ' ',so can use cin to input string to each variaty
+    for(i=0;i<a.length()&&b.length();i++)
     {
         if(counter==0)
         {
-            if(code[0][i]>='A'&&code[0][i]<='G'&&code[0][i]==code[1][i])
+            if(a[i]==b[i]&&(a[i]>='A'&&a[i]<='G'))
             {
                 counter=1;
-                std::cout<<DAY[code[0][i]-'A']<<" ";
+                std::cout<<DAY[a[i]-'A']<<" ";
                 continue;
             }
         }
         else
         {
-            if(code[0][i]==code[1][i])
+            if(a[i]==b[i])
             {
-                if(code[0][i]>='0'&&code[0][i]<='9')
+                if(a[i]>='0'&&a[i]<='9')
                 {
-                    std::cout<<code[0][i]-'0'+1<<":";
+                    std::cout<<a[i]-'0'+1<<":";
                     //break;
                 }
-                else if(code[0][i]>='a'&&code[0][i]<='n')
+                /*else if(code[0][i]>='a'&&code[0][i]<='n')
                 {
                     std::cout<<code[0][i]-'a'+10<<":";
                     //break;
-                }
-                else if(code[0][i]>='A'&&code[0][i]<='N')
+                }*/
+                else if(a[i]>='A'&&a[i]<='N')
                 {
-                    std::cout<<code[0][i]-'A'+10<<":";//typewrite is wrong turn 'A' to 'a'
+                    std::cout<<a[i]-'A'+10<<":";//typewrite is wrong turn 'A' to 'a'
                     //break;
                 }
                 break;
             }
         }
     }
-    for(i=0;code[2][i]!='\0'||code[3][i]!='\0';i++)
+    for(i=0;i<c.length()&&d.length();i++)
     {
-        if(code[2][i]==code[3][i]&&((code[2][i]>='a'&&code[3][i]<='z')||(code[2][i]>='A'&&code[3][i]<='Z')))
+        if(a[i]==b[i]&&isalpha(a[i]))
         {
-            if(i<=9)
-            {
-                std::cout<<0<<i;
-            }
-            else
-            {
-                std::cout<<i;
-            }
+            std::cout<<std::setfill('0')<<std::setw(2)<<i;
             break;
         }
     }
