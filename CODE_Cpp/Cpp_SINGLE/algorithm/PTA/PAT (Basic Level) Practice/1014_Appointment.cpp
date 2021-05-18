@@ -36,24 +36,25 @@ int main()
                 if(code[0][i]>='0'&&code[0][i]<='9')
                 {
                     std::cout<<code[0][i]-'0'+1<<":";
-                    break;
+                    //break;
                 }
                 else if(code[0][i]>='a'&&code[0][i]<='n')
                 {
                     std::cout<<code[0][i]-'a'+10<<":";
-                    break;
+                    //break;
                 }
                 else if(code[0][i]>='A'&&code[0][i]<='N')
                 {
-                    std::cout<<code[0][i]-'a'+10<<":";
-                    break;
+                    std::cout<<code[0][i]-'A'+10<<":";//typewrite is wrong turn 'A' to 'a'
+                    //break;
                 }
+                break;
             }
         }
     }
     for(i=0;code[2][i]!='\0'||code[3][i]!='\0';i++)
     {
-        if(code[2][i]==code[3][i])
+        if(code[2][i]==code[3][i]&&((code[2][i]>='a'&&code[3][i]<='z')||(code[2][i]>='A'&&code[3][i]<='Z')))
         {
             if(i<=9)
             {
@@ -63,6 +64,7 @@ int main()
             {
                 std::cout<<i;
             }
+            break;
         }
     }
     return 0;
