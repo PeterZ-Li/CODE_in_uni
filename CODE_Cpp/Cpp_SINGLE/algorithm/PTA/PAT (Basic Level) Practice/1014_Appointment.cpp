@@ -3,7 +3,7 @@
 #include<vector>
 #include<iomanip>//control the width
 
-#define N 4
+//#define N 4
 /*struct Time
 {
     std::string day;
@@ -17,7 +17,7 @@ int main()
     std::string a,b,c,d;
     int i,counter=0;
     std::cin>>a>>b>>c>>d;//a string without ' ',so can use cin to input string to each variaty
-    for(i=0;i<a.length()&&b.length();i++)
+    for(i=0;i<(int)a.length()&&i<(int)b.length();i++)
     {
         if(counter==0)
         {
@@ -29,31 +29,27 @@ int main()
             }
         }
         else
-        {
-            if(a[i]==b[i])
+        {//if there is the same element not within '0'to'9' and 'A' to 'N', it will be wrong
+            if(a[i]==b[i]&&(a[i]>='0'&&a[i]<='9'))
             {
-                if(a[i]>='0'&&a[i]<='9')
-                {
-                    std::cout<<a[i]-'0'+1<<":";
-                    //break;
-                }
-                /*else if(code[0][i]>='a'&&code[0][i]<='n')
-                {
-                    std::cout<<code[0][i]-'a'+10<<":";
-                    //break;
-                }*/
-                else if(a[i]>='A'&&a[i]<='N')
-                {
-                    std::cout<<a[i]-'A'+10<<":";//typewrite is wrong turn 'A' to 'a'
-                    //break;
-                }
+                std::cout<<std::setfill('0')<<std::setw(2)<<a[i]-'0'<<":";
+                break;
+            }
+            /*else if(code[0][i]>='a'&&code[0][i]<='n')
+            {
+                std::cout<<code[0][i]-'a'+10<<":";
+                //break;
+            }*/
+            else if(a[i]==b[i]&&(a[i]>='A'&&a[i]<='N'))
+            {
+                std::cout<<a[i]-'A'+10<<":";//typewrite is wrong turn 'A' to 'a'
                 break;
             }
         }
     }
-    for(i=0;i<c.length()&&d.length();i++)
+    for(i=0;i<(int)c.length()&&i<(int)d.length();i++)
     {
-        if(a[i]==b[i]&&isalpha(a[i]))
+        if(c[i]==d[i]&&isalpha(c[i]))
         {
             std::cout<<std::setfill('0')<<std::setw(2)<<i;
             break;
