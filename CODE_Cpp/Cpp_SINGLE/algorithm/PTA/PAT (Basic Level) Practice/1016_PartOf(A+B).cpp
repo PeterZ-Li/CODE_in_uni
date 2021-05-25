@@ -1,27 +1,18 @@
 #include<iostream>
 #include<string>
 
+//can use stoi() instead. creat another string to get p by string += string1 which can extend the string
 int CreatP(std::string str,std::string dstr)
 {
-    int count=0,num=dstr[0]-'0';
-    if(num==0)// add condition
-    {
-        return 0;
-    }
+    std::string p="0";// construct p with "0" can reduce the risk if there is no p, so it can return number 0. Otherwise, stoi() can not return anything
     for(int i=0;i<(int)str.length();i++)
     {
         if(str[i]==dstr[0])
         {
-            count++;
+            p+=dstr;
         }
     }
-    int p=0,base=1;
-    while(count--)
-    {
-        p+=base*num;//creat p by adding
-        base*=10;
-    }
-    return p;
+    return std::stoi(p,nullptr);
 }
 
 int main()
