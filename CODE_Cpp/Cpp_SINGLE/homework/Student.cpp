@@ -2,16 +2,25 @@
 #include<string>
 #include<cmath>
 #include<vector>
+#define N 5
 
+std::vector<std::string> NAME={"Mike Barnes","Jim Nickerson","Jack Indabox","Jane Miller","Mary Scott"};
+std::vector<std::string> SEX={"Male","Female"};
 struct STUDENT
 {
     std::string name;
     std::string sex;
     int grade;
     float gpa;
-    STUDENT(std::string str,std::string str1,int a,float b):name(str),sex(str1),grade(a),gpa(b)
-    {}
 }stu1;
+STUDENT students[N]
+{
+    NAME[0],SEX[0],1,4.0,
+    NAME[1],SEX[0],2,3.0,
+    NAME[2],SEX[0],3,2.5,
+    NAME[3],SEX[1],4,3.6,
+    NAME[4],SEX[1],4,2.7,
+};
 
 class Student
 {
@@ -47,17 +56,8 @@ class Student
     }
 };
 
-#define N 5
 int main()
 {
-    STUDENT students[N]=
-    {
-        "Mike Barnes","Male",1,4.0,
-        "Jim Nickerson","Male",2,3.0,
-        "Jack Indabox","Male",3,2.5,
-        "Jane Miller","Female",4,3.6,
-        "Mary Scott","Female",4,2.7,
-    };
     std::vector<Student> student_list;
     for(int i=0;i<N;i++)
     {
