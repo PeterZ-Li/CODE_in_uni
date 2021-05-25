@@ -4,6 +4,10 @@
 int CreatP(std::string str,std::string dstr)
 {
     int count=0,num=dstr[0]-'0';
+    if(num==0)// add condition
+    {
+        return 0;
+    }
     for(int i=0;i<(int)str.length();i++)
     {
         if(str[i]==dstr[0])
@@ -11,10 +15,10 @@ int CreatP(std::string str,std::string dstr)
             count++;
         }
     }
-    int p,base=1;
+    int p=0,base=1;
     while(count--)
     {
-        p=base*num;
+        p+=base*num;//creat p by adding
         base*=10;
     }
     return p;
