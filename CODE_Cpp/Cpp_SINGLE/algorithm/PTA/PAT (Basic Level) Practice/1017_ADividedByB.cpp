@@ -8,11 +8,7 @@ int main()
     std::cin>>A>>B;
     outcome=(A[0]-'0')/B;
     remainder=(A[0]-'0')%B;
-    if(outcome!=0)
-    {
-        std::cout<<outcome;
-    }
-    else if((int)A.length()==1)//if A is single, and outcome is zero, need to output 0
+    if(outcome!=0||(int)A.length()==1)//if A is single, and outcome is zero, need to output 0. use || can shorten the code
     {
         std::cout<<outcome;
     }
