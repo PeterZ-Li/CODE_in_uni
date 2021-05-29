@@ -12,6 +12,10 @@ int main()
     {
         std::cout<<outcome;
     }
+    else if((int)A.length()==1)//if A is single, and outcome is zero, need to output 0
+    {
+        std::cout<<outcome;
+    }
     for(int i=1;i<(int)A.length();i++)
     {
         divisor=remainder*10+(A[i]-'0');
