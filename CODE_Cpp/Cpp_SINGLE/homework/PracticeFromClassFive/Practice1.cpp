@@ -9,7 +9,8 @@ class Assistent
     {
         std::cout<<"Is it raining?"<<" (You can input Y/N)"<<std::endl;
         char judge;
-        while(!(std::cin>>judge))
+        std::cin>>judge;
+        while(!(std::cin.good()))
         {
             std::cout<<"Your input is wrong, please input again"<<std::endl;
             std::cin.clear();
@@ -36,7 +37,7 @@ class Assistent
         int mark;
         std::cout<<"What's your test mark?"<<std::endl;
         std::cin>>mark;
-        while(!(std::cin>>mark))
+        while(!(std::cin.good()))
         {
             std::cout<<"Your input is wrong, please input again"<<std::endl;
             std::cin.clear();
@@ -51,10 +52,10 @@ class Assistent
         }
         switch((int)mark/10)
         {
-            case 10:
+            case 10:std::cout<<"A"<<std::endl;break;
             case 9:std::cout<<"A"<<std::endl;break;
 		    case 8:std::cout<<"B"<<std::endl;break;
-		    case 7:
+		    case 7:std::cout<<"C"<<std::endl;break;
 		    case 6:std::cout<<"C"<<std::endl;break;
 		    default:std::cout<<"D"<<std::endl;break;
         }
@@ -65,6 +66,6 @@ int main()
     Assistent cortana;
     cortana.AskWeather();
     cortana.AskMark();
-    system("pause");
+    //system("pause");
     return 0;
 }
