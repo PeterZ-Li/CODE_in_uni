@@ -2,16 +2,14 @@
 #include<string>
 #include<cmath>
 #include<vector>
-#define N 4
+#define N 5
 
-std::string identity[][N]=
-{
-    "Mike Barnes","Male","1","4.0",
-    "Jim Nickerson","Male","2","3.0",
-    "Jack Indabox","Male","3","2.5",
-    "Jane Miller","Female","4","3.6",
-    "Mary Scott","Female","4","2.7",
-};
+
+    std::string Mike[]={"Mike Barnes","Male","1","4.0",};
+    std::string Jim[]={"Jim Nickerson","Male","2","3.0",};
+    std::string Jack[]={"Jack Indabox","Male","3","2.5",};
+    std::string Jane[]={"Jane Miller","Female","4","3.6",};
+    std::string Mary[]={"Mary Scott","Female","4","2.7",};
 /*struct STUDENT
 {
     std::string name;
@@ -34,15 +32,15 @@ class Student
     std::string name;
     std::string sex;
     int grade;
-    float gpa;
+    double gpa;
     
     public:
-    Student(std::string str)
+    Student(std::string str[])
     {
         name=str[0];
         sex=str[1];
         grade=std::stoi(str[2]);
-        gpa=
+        gpa=std::stod(str[3]);
     }
     ~Student()
     {
@@ -50,36 +48,36 @@ class Student
     }
     void show_myself()
     {
-        std::cout<<stu.name<<" "<<stu.grade<<" "
-        <<stu.sex<<" "<<stu.gpa<<std::endl;
+        std::cout<<name<<" "<<grade<<" "
+        <<sex<<" "<<gpa<<std::endl;
     }
     float study_time(double study_time)
     {
-        stu.gpa+=log10(study_time);
-        return stu.gpa=stu.gpa>4.0? 4.0: stu.gpa;
+        gpa+=log10(study_time);
+        return gpa=gpa>4.0? 4.0: gpa;
     }
 };
 
 int main()
 {
-    std::vector<Student> student_list;
+    Student student1(Mike);
+    Student student2(Jim);
+    Student student3(Jack);
+    Student student4(Jane);
+    Student student5(Mary);
+    Student students[N]={student1,student2,student3,student4,student5};
     for(int i=0;i<N;i++)
     {
-        Student student(students[i]);
-        student_list.push_back(student);
+        students[i].show_myself();
     }
+    double studytime[N]={60.0,100.0,40.0,300.0,1000.0};
     for(int i=0;i<N;i++)
     {
-        student_list[i].show_myself();
-    }
-    double studytime[N]={60,100,40,300,1000};
-    for(int i=0;i<N;i++)
-    {
-        student_list[i].study_time(studytime[i]);
+        students[i].study_time(studytime[i]);
     }
         for(int i=0;i<N;i++)
     {
-        student_list[i].show_myself();
+        students[i].show_myself();
     }
     return 0;
 }
