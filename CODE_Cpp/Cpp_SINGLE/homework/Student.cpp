@@ -2,11 +2,17 @@
 #include<string>
 #include<cmath>
 #include<vector>
-#define N 5
+#define N 4
 
-std::vector<std::string> NAME={"Mike Barnes","Jim Nickerson","Jack Indabox","Jane Miller","Mary Scott"};
-std::vector<std::string> SEX={"Male","Female"};
-struct STUDENT
+std::string identity[][N]=
+{
+    "Mike Barnes","Male","1","4.0",
+    "Jim Nickerson","Male","2","3.0",
+    "Jack Indabox","Male","3","2.5",
+    "Jane Miller","Female","4","3.6",
+    "Mary Scott","Female","4","2.7",
+};
+/*struct STUDENT
 {
     std::string name;
     std::string sex;
@@ -20,25 +26,23 @@ STUDENT students[N]
     NAME[2],SEX[0],3,2.5,
     NAME[3],SEX[1],4,3.6,
     NAME[4],SEX[1],4,2.7,
-};
+};*/
 
 class Student
 {
     private:
-    struct Atribute
-    {
-        std::string name;
-        std::string sex;
-        int grade;
-        float gpa;
-    }stu;
+    std::string name;
+    std::string sex;
+    int grade;
+    float gpa;
+    
     public:
-    Student(STUDENT)
+    Student(std::string str)
     {
-        stu.name=stu1.name;
-        stu.sex=stu1.sex;
-        stu.grade=stu1.grade;
-        stu.gpa=stu1.gpa;
+        name=str[0];
+        sex=str[1];
+        grade=std::stoi(str[2]);
+        gpa=
     }
     ~Student()
     {
