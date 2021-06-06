@@ -3,18 +3,18 @@
 
 int main()
 {
-    int n,mark,sequence[N]={0};
+    int n,mark,book[N]={0};
     std::cin>>n;
     while (n--)
     {
         std::cin>>mark;
-        sequence[mark]++;
+        book[mark]++;
     }
     for(int i=N-1;i>=0;i--)
     {
-        if(sequence[i]!=0)
+        if(book[i]!=0)
         {
-            while(sequence[i]--)
+            while(book[i]--)
             {
                 std::cout<<i<<" ";
             }
