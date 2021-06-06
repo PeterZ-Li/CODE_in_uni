@@ -12,7 +12,7 @@ int main()
         NumList.push_back(num);
     }
     n=NumList.size();
-    for(int i=0;i<n-2;i++)
+    for(int i=0;i<n-1;i++)//control the number of times in sequencing.
     {
         for(int j=0;j<n-i-1;j++)
         {
