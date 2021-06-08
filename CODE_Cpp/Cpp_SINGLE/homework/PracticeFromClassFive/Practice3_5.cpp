@@ -76,11 +76,11 @@ int main()
 {
     std::string nam,adr,pho,titl,jobs;
     std::cin>>nam>>adr>>pho>>titl;
-    Teacher teacher(nam,adr,pho,40,100000,"M",titl);
+    Teacher teacher(nam,adr,pho,40,100000,'M',titl);//'' means it is a char, "" means it is a string. so its("blabla") type is const char*, points to a string
     std::cin>>nam>>adr>>pho>>jobs;
-    Cadre ca(nam,adr,pho,40,100000,"M",jobs);
+    Cadre ca(nam,adr,pho,40,100000,'M',jobs);
     std::cin>>nam>>adr>>pho>>titl>>jobs;
-    TeacherCadre teca(nam,adr,pho,40,100000,"M",titl,jobs);
+    TeacherCadre teca(nam,adr,pho,40,100000,'M',titl,jobs);
     teacher.show();
     ca.show();
     teca.show();
