@@ -9,7 +9,7 @@ int main()
     if(in)
     {
         std::string fstr;
-        in>>fstr;
+        in>>fstr;//try to think that "in" is an object which let its element input to a string 
         int num;
         for(int i=0;i<(int)fstr.length();i++)
         {
