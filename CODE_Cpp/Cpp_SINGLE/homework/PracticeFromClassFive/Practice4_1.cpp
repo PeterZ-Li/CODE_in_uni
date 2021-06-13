@@ -11,10 +11,7 @@ class CEmployee
         m_salary=2000;
     }
     virtual ~CEmployee()=default;
-    virtual void Salary()
-    {
-    //    this->m_salary=2000;
-    }
+    virtual void Salary()=0;//change it to a pure virtual way
 };
 
 class CSalesman:public CEmployee
