@@ -3,10 +3,10 @@
 template<typename T>
 int f(T x)
 {
-    return 0;
+    return x;
 }
 
-int f(int y)
+double f(int y)
 {
     return 1;
 }
@@ -14,7 +14,7 @@ int f(int y)
 int main()
 {
     int n=3;
-    float m=1.0;
-    std::cout<<f(n)<<' '<<f(m);//which is easier, use which one
+    double m=1.11;
+    std::cout<<f(n)<<' '<<f(m)<<' '<<(double)n<<' '<<sizeof(double)<<' '<<sizeof(int);//which is easier, use which one
     return 0;
 }
