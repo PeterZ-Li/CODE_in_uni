@@ -2,56 +2,50 @@
 
 int n,*isbn=new int[n];
 
-int BubbleSort();
+void BubbleSort();
 
 int main()
 {
     std::cin>>n;
     for(int i=0;i<n;i++)
     {
-        std::cin>>isbn[n];
+        std::cin>>isbn[i];
     }
-    int k=BubbleSort();
-    std::cout<<k<<std::endl;
+    BubbleSort();
+    int count=0;
     for(int i=0;i<n;i++)
     {
-        if(isbn[n]==0)
+        if(isbn[i]==isbn[i+1])
         {
-            continue;
+            isbn[i+1]=0;
+            count++;
         }
-        std::cout<<isbn[n]<<' ';
     }
-    delete[] isbn;
-    return 0;
-}
-
-int BubbleSort()
-{
-    int count=0;
+    std::cout<<n-count<<std::endl;
     for(int i=0;i<n;i++)
     {
         if(isbn[i]==0)
         {
             continue;
         }
-        for(int j=i+1;j<n;j++)
+        std::cout<<isbn[i]<<' ';
+    }
+    delete[] isbn;
+    return 0;
+}
+
+void BubbleSort()
+{
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<n-i;j++)
         {
-            if(isbn[j]==0)
+            if(isbn[j]>isbn[j+1])
             {
-                continue;
-            }
-            if(isbn[i]>isbn[j])
-            {
-                int tem=isbn[i];
-                isbn[i]=isbn[j];
-                isbn[j]=tem;
-            }
-            else if(isbn[i]==isbn[j])
-            {
-                isbn[j]=0;
-                count++;
+                int temp=isbn[j];
+                isbn[j]=isbn[j+1];
+                isbn[j+1]=temp;
             }
         }
     }
-    return n-count;
 }
