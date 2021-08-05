@@ -1,6 +1,8 @@
 #include<iostream>
+#include<vector>
 
-int n,*isbn=new int[n];
+int n;
+std::vector<int> isbn;
 
 void BubbleSort();
 
@@ -9,7 +11,9 @@ int main()
     std::cin>>n;
     for(int i=0;i<n;i++)
     {
-        std::cin>>isbn[i];
+        int num;
+        std::cin>>num;
+        isbn.push_back(num);
     }
     BubbleSort();
     int count=0;
@@ -30,7 +34,6 @@ int main()
         }
         std::cout<<isbn[i]<<' ';
     }
-    delete[] isbn;
     return 0;
 }
 
