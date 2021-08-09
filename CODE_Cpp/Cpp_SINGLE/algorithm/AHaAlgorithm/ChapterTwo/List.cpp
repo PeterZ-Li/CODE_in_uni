@@ -27,7 +27,7 @@ int main()
             q->next=p;
         }
         q=p;
-        delete p;
+        //delete p;
     }
     std::cin>>a;
     t=head;
@@ -39,7 +39,7 @@ int main()
             p->data=a;
             p->next=t->next;
             t->next=p;
-            delete p;
+            //delete p;
             break;
         }
         t=t->next;
@@ -48,7 +48,9 @@ int main()
     while(t!=nullptr)
     {
         std::cout<<t->data<<' ';
+        p=t;
         t=t->next;
+        delete p;//delete in a circle.
     }
     return 0;
 }
