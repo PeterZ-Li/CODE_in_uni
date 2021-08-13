@@ -1,7 +1,8 @@
 n=int(input())
-cut=["","",""]
+#cut=["","",""]
 #CutLine,flag=0,True
 while n!=0:
+    cut=["","",""]
     CutLine,flag=0,True
     str=input()
     for i in str:
