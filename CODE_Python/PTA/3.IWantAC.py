@@ -1,7 +1,8 @@
 n=int(input())
 cut=["","",""]
-CutLine,flag=0,True
+#CutLine,flag=0,True
 while n!=0:
+    CutLine,flag=0,True
     str=input()
     for i in str:
         if i=='A':
