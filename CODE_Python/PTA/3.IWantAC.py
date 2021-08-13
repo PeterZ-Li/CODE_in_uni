@@ -1,38 +1,23 @@
-def isPTA(string):
-    for s in string:
-        if s!='P' and s!='T' and s!='A':
-            return False
-    return True
-def relation(fir,sec,tri):
-    if sec == 0:
-        print("NO")
-    elif sec == 1:
-        if fir == tri:
-            print("YES")
-        else:
-            print("NO")
-    elif sec>1:
-        if tri == (fir*sec):
-            print("YES")
-        else:
-            print("NO")
-def isAC(string):
-    if isPTA(string):
-        first,second,tried= -1,0,0
-        for i in range(len(string)):
-            if string[i] == 'P':
-                first=i
-            elif string[i] == 'T' and first != -1:
-                second=i-1-first
-                if i==len(string)-1:
-                    tried=i-1-second-first
-            elif i==len(string)-1:
-                tried=i-1-second-first
-        relation(first,second,tried)
-    else:
-        print("NO")
 n=int(input())
+cut=["","",""]
+CutLine,flag=0,True
 while n!=0:
     str=input()
-    isAC(str)
+    for i in str:
+        if i=='A':
+            cut[CutLine]+=i
+        elif i=='P' and CutLine==0:
+            CutLine=1
+        elif i=='T' and CutLine==1:
+            CutLine=2
+        else:
+            flag=False
+            break
+    if flag is True and CutLine==2:
+        if len(cut[1])>=1 and cut[2]==len(cut[1])*cut[0]:
+            print("YES")
+        else:
+            print("NO")
+    else:
+        print("NO")
     n-=1
