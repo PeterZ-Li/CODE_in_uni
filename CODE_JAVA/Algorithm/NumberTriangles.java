@@ -19,7 +19,8 @@ public class NumberTriangles
         {
             for(int j=1;j<=i;j++)
             {
-                num[i][j]+=Math.max(num[i+1][j],num[i+1][j+1]);
+                //dp[i][j]=Math.max(dp[i-1][j],dp[i-1][j-1])+num[i][j]; 自顶向下
+                num[i][j]+=Math.max(num[i+1][j],num[i+1][j+1]);//自底向上
             }
         }
         /*int answer=0;
@@ -31,3 +32,4 @@ public class NumberTriangles
         input.close();
     }
 }
+//第九个测试点总是MLE ╯﹏╰
